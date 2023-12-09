@@ -1,0 +1,60 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Settings: colours, width and height*/
+:root {
+  --bg-color: #06e978;
+  --font-color: #fff;
+  --card-width: 50vw;
+  --card-max-width: 600px;
+  --card-height: 30vh;
+  --card-max-height: 400px;
+}
+
+/* General settings for card */
+.flip-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  height: var(--card-height);
+  max-height: var(--card-max-height);
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding: 15px;
+  border-radius: 15px;
+  transition: linear 1s;
+}
+
+/* Change side on mouse over */
+.flip-card:hover {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: linear 1s;
+}
+
+/* Hide front on mouse over */
+.flip-card:hover .front {
+  display: none;
+}
+
+/* Hide backside on default */
+.back {
+  display: none;
+}
+
+/* Show backside on mouse over */
+.flip-card:hover .back {
+  display: flex;
+  transform: rotateY(180deg);
+}
